@@ -1,0 +1,12 @@
+{
+  "buildCommand": "cd ferrero-dashboard && npm install && npm run build",
+  "outputDirectory": "ferrero-dashboard/dist",
+  "installCommand": "cd ferrero-dashboard && npm install",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
