@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss init -p)",
+      "Bash(del \"c:\\\\Users\\\\vrashal\\\\Desktop\\\\Dashboards\\\\Ferrero\\\\ferrero-dashboard\\\\src\\\\App.css\")",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:delicate-nine.vercel.app)",
+      "Bash(dir:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
