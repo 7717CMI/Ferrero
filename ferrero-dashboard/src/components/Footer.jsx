@@ -7,7 +7,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1 }}
-      className="relative py-8 text-center bg-gradient-to-r from-slate-50 via-white to-slate-50 border-t border-gray-200 backdrop-blur-sm"
+      className="relative py-8 px-8 text-center bg-gradient-to-r from-slate-50/50 via-white/50 to-slate-50/50 border-t border-gray-200/70 backdrop-blur-sm"
     >
       {/* Decorative top border */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full" />
