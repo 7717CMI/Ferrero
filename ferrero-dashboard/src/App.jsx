@@ -5,55 +5,91 @@ import { reports } from './data/reports';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-50 to-gray-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40">
+      {/* Decorative background elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-indigo-300/20 rounded-full blur-3xl" />
+        <div className="absolute top-60 -left-40 w-80 h-80 bg-gradient-to-br from-purple-200/20 to-pink-300/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-40 right-1/3 w-80 h-80 bg-gradient-to-br from-cyan-200/20 to-teal-300/20 rounded-full blur-3xl" />
+      </div>
+
       {/* Header Bar with Logo and Title */}
-      <header className="bg-white border-b border-gray-200 px-10 md:px-16 py-6 shadow-sm">
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative bg-white/80 backdrop-blur-xl border-b border-gray-200/50 px-6 md:px-16 py-6 shadow-lg shadow-gray-200/50"
+      >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <img
+          <motion.img
             src="/logo.png"
             alt="Logo"
-            className="h-12 md:h-14 object-contain"
+            className="h-12 md:h-16 object-contain"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
           />
 
           {/* Title */}
-          <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-2xl md:text-4xl font-extrabold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent drop-shadow-sm"
+          >
             Market Analysis Reports
-          </h1>
+          </motion.h1>
 
           {/* Empty div for spacing balance */}
           <div className="w-28 md:w-36"></div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Subtitle Section - Centered */}
-      <div className="bg-gradient-to-r from-blue-50 via-white to-indigo-50 border-b border-gray-100 py-6">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+        className="relative bg-gradient-to-r from-blue-50/50 via-white/50 to-indigo-50/50 backdrop-blur-sm border-b border-gray-200/50 py-8"
+      >
         <div className="flex flex-col items-center justify-center">
-          <p className="text-gray-600 text-center max-w-xl mb-4 text-base">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-gray-700 text-center max-w-2xl mb-5 text-base md:text-lg font-medium px-4"
+          >
             Comprehensive market analysis for food processing, packaging, and manufacturing technologies
-          </p>
+          </motion.p>
 
           {/* Reports count badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white rounded-full border border-green-200 shadow-sm"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-full border border-green-300/50 shadow-lg shadow-green-200/50 backdrop-blur-sm"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+            whileHover={{ scale: 1.05 }}
           >
-            <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm text-gray-600">
-              <span className="font-semibold text-green-600">{reports.length}</span> Reports Available
+            <div className="relative">
+              <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
+              <div className="absolute inset-0 w-3 h-3 rounded-full bg-green-400 animate-ping" />
+            </div>
+            <span className="text-sm md:text-base text-gray-700 font-medium">
+              <span className="font-bold text-green-600">{reports.length}</span> Reports Available
             </span>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main content - Reports Section - Flex grow to fill remaining space */}
-      <div className="flex-1 px-10 md:px-16 lg:px-24 xl:px-32 py-8">
+      <div className="relative flex-1 px-6 md:px-12 lg:px-20 xl:px-28 2xl:px-36 py-12">
         {/* Reports Grid - Full width responsive with proper spacing */}
         <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 h-full"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 h-full"
         >
           <AnimatePresence mode="popLayout">
             {reports.map((report, index) => (
