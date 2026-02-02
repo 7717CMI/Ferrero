@@ -61,7 +61,7 @@ function App() {
               transition={{ delay: 0.4 }}
               className="text-gray-600 text-center max-w-2xl mb-5 text-base md:text-lg font-medium px-4"
             >
-              Comprehensive market analysis for food processing, packaging, and manufacturing technologies
+              Comprehensive Market Analysis covering Food Processing, Sterilization, Sorting, Packaging, Quality Control, and Automation Technologies across Global Food Manufacturing Market
             </motion.p>
 
             {/* Reports count badge */}
